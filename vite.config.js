@@ -1,23 +1,18 @@
-const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env;
+const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
 
-import { defineConfig } from 'vite';
-import commonjs from 'vite-plugin-commonjs';
-
-export default defineConfig({
+export default {
     root: 'src/',
     publicDir: '../static/',
     base: './',
-    server: {
+    server:
+    {
         host: true,
-        open: !isCodeSandbox 
+        open: !isCodeSandbox // Open if it's not a CodeSandbox
     },
-    build: {
+    build:
+    {
         outDir: '../dist',
         emptyOutDir: true,
-        sourcemap: true,
-        rollupOptions: {
-            external: ['cannon'] 
-        }
-    },
-    plugins: [commonjs()] 
-});
+        sourcemap: true
+    }
+}
