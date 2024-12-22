@@ -14,9 +14,11 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "lil-gui": "^0.17.0",
+    "cannon-es": "^0.20.0",
     "gsap": "^3.11.4",
+    "lil-gui": "^0.17.0",
     "three": "^0.148.0",
-    "vercel": "^39.0.2"
+    "vercel": "^39.0.2",
+    "vite-plugin-commonjs": "^0.10.4"
   }
 }
