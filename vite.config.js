@@ -1,18 +1,19 @@
-const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
+const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env;
 
 export default {
     root: 'src/',
     publicDir: '../static/',
     base: './',
-    server:
-    {
+    server: {
         host: true,
         open: !isCodeSandbox // Open if it's not a CodeSandbox
     },
-    build:
-    {
+    build: {
         outDir: '../dist',
         emptyOutDir: true,
-        sourcemap: true
+        sourcemap: true,
+        rollupOptions: {
+            external: ['cannon']
+        }
     }
-}
+};
